@@ -35,14 +35,13 @@ pipeline {
                     def deploymentExists = sh(returnStdout: true, script: 'kubectl get deployments gmuspringbootstudentsurveydeploy --no-headers --output=name').trim()
                     
                     // Use if statement to conditionally skip the deployment creation
-                    if (deploymentExists.isEmpty()) {
-                        sh "kubectl set image deployment/gmuspringbootstudentsurveydeploy gmuspringbootstudentsurveydeploy=erikkitchen/gmuspringbootstudentsurvey:${env.BUILD_ID}"
-                    } else {
+                    if (deploymentExists != 0) {
                         // Create the deployment
                         sh "kubectl create deployment gmuspringbootstudentsurveydeploy --image=erikkitchen/gmuspringbootstudentsurvey:${env.BUILD_ID}"
-                        sh "kubectl set image deployment/gmuspringbootstudentsurveydeploy gmuspringbootstudentsurveydeploy=erikkitchen/gmuspringbootstudentsurvey:${env.BUILD_ID}"
-
                     }
+
+                    // Update the deployment
+                    sh "kubectl set image deployment/gmuspringbootstudentsurveydeploy gmuspringbootstudentsurveydeploy=erikkitchen/gmuspringbootstudentsurvey:${env.BUILD_ID}"
                 }
                 /*sh "kubectl create deployment gmustudentsurveydeploy --image=erikkitchen/gmustudentsurvey:${env.BUILD_ID}"
 				sh "kubectl get deployments"
