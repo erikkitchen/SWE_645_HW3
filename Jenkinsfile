@@ -33,7 +33,7 @@ pipeline {
                 sh 'kubectl get deployments'
                 script {
                     // Check if the deployment already exists
-                    def deploymentExists = sh(returnStdout: true, script: 'kubectl get deployments gmuspringbootstudentsurveydeploy --no-headers --output=name').trim()
+                    def deploymentExists = sh(returnStdout: true, script: 'kubectl get deployments').trim()
                     
                     // Use if statement to conditionally skip the deployment creation
                     if (deploymentExists) {
