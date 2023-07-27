@@ -9,7 +9,8 @@ pipeline {
                 echo 'Building jar file'
                 git branch: 'main', url: 'https://github.com/erikkitchen/SWE_645_HW3.git'
                 sh 'rm -rf *.jar'
-                sh 'jar -cvf springboot_studentsurvey_backend.jar -C ./ .'
+                //sh 'jar -cvf springboot_studentsurvey_backend.jar -C ./ .'
+                sh 'jar -cvfm springboot_studentsurvey_backend.jar META-INF/MANIFEST.MF -C target/classes .'
             }
         }
             
