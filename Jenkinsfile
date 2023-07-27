@@ -37,7 +37,7 @@ pipeline {
                     
                     // Use if statement to conditionally skip the deployment creation
                     if (deploymentExists) {
-                        sh "kubectl set image deployment/gmuspringbootstudentsurveydeploy gmuspringbootstudentsurveydeploy=erikkitchen/gmuspringbootstudentsurvey:${env.BUILD_ID}"
+                        sh "kubectl set image deployment/gmuspringbootstudentsurveydeploy gmuspringbootstudentsurvey=erikkitchen/gmuspringbootstudentsurvey:${env.BUILD_ID}"
                     } else {
                         // Create the deployment
                         sh "kubectl create deployment gmuspringbootstudentsurveydeploy --image=erikkitchen/gmuspringbootstudentsurvey:${env.BUILD_ID}"
