@@ -13,7 +13,7 @@ pipeline {
                 //sh 'jar -cvf springboot_studentsurvey_backend.jar -C ./ .'
                 //sh 'jar -cvfm springboot_studentsurvey_backend.jar src/main/resources/META-INF/MANIFEST.MF -C ./ .'
                 //sh 'javac -d target src/main/java/Erik/Kitchen/studentsurvey/*.java' // Compile the source files
-                sh 'wget https://apache.mirror.digitalpacific.com.au/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz'
+                sh 'wget --no-check-certificate https://apache.mirror.digitalpacific.com.au/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz'
                 sh 'mvn clean package'
 
                 //sh 'jar -cvfm springboot_studentsurvey_backend.jar src/main/resources/META-INF/MANIFEST.MF -C ./src/main/resources .'
