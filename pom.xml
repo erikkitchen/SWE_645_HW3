@@ -14,9 +14,7 @@
 	<name>student-survey</name>
 	<description>HW3 project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
-		<maven.compiler.source>11</maven.compiler.source>
-   		<maven.compiler.target>11</maven.compiler.target>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -48,6 +46,7 @@
 				<configuration>
                     <!-- Set the main class from the property defined above -->
                     <mainClass>Erik.Kitchen.studentsurvey.StudentSurveyApplication</mainClass>
+
                 </configuration>
                 <executions>
                     <execution>
