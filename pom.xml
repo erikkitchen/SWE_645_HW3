@@ -44,9 +44,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-                    <!-- Set the main class from the property defined above -->
                     <mainClass>Erik.Kitchen.studentsurvey.StudentSurveyApplication</mainClass>
-
+					<layout>JAR</layout>
                 </configuration>
                 <executions>
                     <execution>
