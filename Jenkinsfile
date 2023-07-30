@@ -11,7 +11,7 @@ pipeline {
                 sh 'rm -rf *.jar'
                 //sh 'jar -cvf springboot_studentsurvey_backend.jar .'
                 //sh 'jar -cvf springboot_studentsurvey_backend.jar -C ./ .'
-                sh 'jar -cvfm springboot_studentsurvey_backend.jar src/main/resources/META-INF/MANIFEST.MF .'
+                sh 'jar -cvfm springboot_studentsurvey_backend.jar src/main/resources/META-INF/MANIFEST.MF -C ./ .'
             }
         }
             
