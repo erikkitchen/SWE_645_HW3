@@ -9,6 +9,7 @@ pipeline {
                 // Install Maven on the Jenkins agent using 'tool' step
                 tool name: 'Maven 3.9.3', type: 'maven'
             }
+        }
             
 
         stage('Create new jar File') {
