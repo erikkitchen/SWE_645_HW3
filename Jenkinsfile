@@ -4,6 +4,13 @@ pipeline {
     
 
     stages {
+        stage('Install Maven') {
+            steps {
+                // Install Maven on the Jenkins agent using 'tool' step
+                tool name: 'Maven', type: 'maven'
+            }
+        }
+
         stage('Create new jar File') {
             steps {
                 echo 'Building jar file'
