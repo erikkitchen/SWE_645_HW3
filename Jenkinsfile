@@ -7,7 +7,7 @@ pipeline {
         stage('Install Maven') {
             steps {
                 // Install Maven on the Jenkins agent using 'tool' step
-                tool name: 'Maven 3.9.3', type: 'maven'
+                tool name: 'Maven', type: 'maven'
             }
         }
             
