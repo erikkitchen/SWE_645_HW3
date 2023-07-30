@@ -22,6 +22,7 @@ pipeline {
                 //sh 'jar -cvfm springboot_studentsurvey_backend.jar src/main/resources/META-INF/MANIFEST.MF -C ./ .'                   sh 'javac -d target src/main/java/Erik/Kitchen/studentsurvey/*.java' // Compile the source files
                 sh 'mvn clean package' 
                 sh 'jar -cvfm springboot_studentsurvey_backend.jar src/main/resources/META-INF/MANIFEST.MF -C ./src/main/resources .'
+                sh 'mv springboot_studentsurvey_backend.jar .'
             }
         }
             
