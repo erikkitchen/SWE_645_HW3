@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: "springbootcluster"
+  cluster:
+    server: "https://ec2-35-171-25-214.compute-1.amazonaws.com/k8s/clusters/c-68cls"
+    certificate-authority-data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2RENDQ\
+      VdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKY\
+      kdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNV\
+      Fk1TURnMApOVEEyTVRBZUZ3MHlNekEzTXpFeU16RXhNREZhRncwek16QTNNamd5TXpFeE1ERmFNR\
+      Vl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV\
+      1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE5qa3dPRFExTURZeE1Ga3dFd1lIS29aSXpqMENBU\
+      VlJS29aSXpqMERBUWNEUWdBRU0vN2ljaTRGL290cAp3c2tIcUswWU5TRmNLTDJrUGYwYXFHMkVzV\
+      1NQWkx2Vm5CMUVTOFNkeW5VbnVmUWxhUk1UUDlsS28wSFhMODJvCjR2SURwSU5tWXFOQ01FQXdEZ\
+      1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGS\
+      WwwSG5nN3Z1dGJ1TTc1Qi9TWnBjajlsVVEvTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUhtVQptT\
+      ktNOGdJUzg0UnpEQW1STEg0aXFoNUpqZitnVUgwTEgyMWlGTlRCQWlBcThJUFVNcjNaZk1PYVI3Q\
+      0M3RDFmCmlpcStqNWljeU11Z1AwMHJWVGtKYVE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t"
+
+users:
+- name: "springbootcluster"
+  user:
+    token: "kubeconfig-user-kn79fb9g2c:rqmxtsbr87qwmw75kvk7rw8ktv4p8vn4fdj7pmwxgk29g2rlk7tnwr"
+
+
+contexts:
+- name: "springbootcluster"
+  context:
+    user: "springbootcluster"
+    cluster: "springbootcluster"
+
+current-context: "springbootcluster"

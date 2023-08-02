@@ -1,0 +1,176 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2023-07-31T23:18:49Z"
+  generateName: gmuspringbootstudentsurveydeploy-65f4f945bc-
+  labels:
+    app: gmuspringbootstudentsurveydeploy
+    pod-template-hash: 65f4f945bc
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:pod-template-hash: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"2eadc27e-9ae3-452f-8f18-c040d14487f6"}: {}
+      f:spec:
+        f:containers:
+          k:{"name":"gmuspringbootstudentsurvey"}:
+            .: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2023-07-31T23:18:49Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.12.2.29"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    subresource: status
+    time: "2023-07-31T23:18:54Z"
+  name: gmuspringbootstudentsurveydeploy-65f4f945bc-q57ks
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: gmuspringbootstudentsurveydeploy-65f4f945bc
+    uid: 2eadc27e-9ae3-452f-8f18-c040d14487f6
+  resourceVersion: "1549303"
+  uid: 52938b0f-911a-4b91-b789-7f8b2cef0990
+spec:
+  containers:
+  - image: erikkitchen/gmuspringbootstudentsurvey:68
+    imagePullPolicy: IfNotPresent
+    name: gmuspringbootstudentsurvey
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-fgxmn
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: gke-swe645springbootclus-default-pool-90b84860-tz37
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-fgxmn
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2023-07-31T23:18:49Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2023-07-31T23:18:53Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2023-07-31T23:18:53Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2023-07-31T23:18:49Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://e3e776e23bc89a900532bdbaafee9b6c6c7440c96b4984be32d0152f031f091e
+    image: docker.io/erikkitchen/gmuspringbootstudentsurvey:68
+    imageID: docker.io/erikkitchen/gmuspringbootstudentsurvey@sha256:1e97f674103bf833de5aca8feeb7aa2078ddcfd3a49b0db375fab33c2f8c2ee2
+    lastState: {}
+    name: gmuspringbootstudentsurvey
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2023-07-31T23:18:53Z"
+  hostIP: 10.142.0.5
+  phase: Running
+  podIP: 10.12.2.29
+  podIPs:
+  - ip: 10.12.2.29
+  qosClass: BestEffort
+  startTime: "2023-07-31T23:18:49Z"
